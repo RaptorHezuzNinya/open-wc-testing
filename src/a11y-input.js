@@ -4,34 +4,29 @@ export class A11yInput extends LitElement {
     static get properties() {
         return {
           label: { type: String },
-          // value: {type: String}
+          value: {type: String}
         };
       }
 
       constructor() {
         super();
         this.label = '';
-        // this.value = '';
+        this.value = '';
       }
       render() {
-
           return html`
             <slot name="label"></slot>
             <slot name="input"></slot>
           `
       }
 
-      get value() {
-        return this.inputEl.value;
-      }
-
-      set value(newValue) {
-        debugger;
-        if (newValue === 'cat') {
-          console.log('We like cats too :)');
-        }
-        if (this.inputEl) {
-          this.inputEl.value = newValue;
+      update(changedProperties) {
+        super.update(changedProperties);
+        if (changedProperties.has('value')) {
+          if (this.value === 'cat') {
+            console.log('We like cats too :)');
+          }
+          this.inputEl.value = this.value;
         }
       }
       connectedCallback() {
