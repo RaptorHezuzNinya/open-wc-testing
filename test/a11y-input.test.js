@@ -3,6 +3,7 @@ import { html, fixture, expect } from '@open-wc/testing';
 
 import '../src/a11y-input.js';
 
+
 /**
  * @typedef {import('../src/a11y-input.js').A11yInput} A11yInput
  */
@@ -26,10 +27,7 @@ describe('a11y input', () => {
 		const el = /** @type {A11yInput} */ (await fixture(html`
 		  <a11y-input .label=${'foo'}></a11y-input>
 		`));
-		// expect(el).lightDom.to.equal(`
-		//   <label slot="label">foo</label>
-		//   <input slot="input">
-		// `);
+
 		expect(el).shadowDom.to.equalSnapshot();
 	});
 
@@ -37,7 +35,7 @@ describe('a11y input', () => {
 		const el = /** @type {A11yInput} */ (await fixture(html`
 		  <a11y-input .value=${'foo'}></a11y-input>
 		`));
-
+		console.log(el.value);
 		expect(el.value).to.equal('foo');
 	});
 });
