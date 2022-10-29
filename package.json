@@ -22,9 +22,9 @@
   },
   "devDependencies": {
     "owc-dev-server": "^1.0.0",
-    "@open-wc/testing-karma": "^2.0.0",
+    "@open-wc/testing-karma": "^4.0.9",
     "webpack-merge": "^4.1.5",
-    "@open-wc/testing-karma-bs": "^1.0.0",
+    "@open-wc/testing-karma-bs": "^1.3.94",
     "@open-wc/testing": "^0.11.1"
   }
 }
